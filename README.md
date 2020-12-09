@@ -4,7 +4,7 @@ Design Pattern Implementation with
 Go实现设计模式
 
 ## 构建型
-* [单例模式](#/creational/singleton/README.md)
+* [单例模式](/creational/singleton/README.md)
 * 工厂模式
 * 建造者模式
 * 原型模式
