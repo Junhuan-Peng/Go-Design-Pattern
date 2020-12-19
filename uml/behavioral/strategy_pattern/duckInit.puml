@@ -1,0 +1,16 @@
+@startuml Initial Duck Class Diagram
+abstract class Duck{
+    +Swin()
+    +Quack()
+    {abstract} +Display()
+}
+
+
+class MallarDuck extends Duck{
+    +Display()
+}
+
+class RedHeadDuck extends Duck{
+    +Display()
+}
+@enduml

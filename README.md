@@ -21,7 +21,7 @@ Go实现设计模式
 ## 行为型
 * 观察者模式
 * 模板模式
-* 策略模式
+* [策略模式](/behavioral/strategy_pattern/README.md)
 * 责任链/职责链模式
 * 状态模式
 * 迭代器模式

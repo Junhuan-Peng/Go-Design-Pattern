@@ -1,0 +1,16 @@
+@startuml Duck Class With Fly
+abstract class Duck{
+    +Swin()
+    +Quack()
+    +Fly()
+    {abstract} +Display()
+}
+
+class MallarDuck extends Duck{
+    +Display()
+}
+
+class RedHeadDuck extends Duck{
+    +Display()
+}
+@enduml

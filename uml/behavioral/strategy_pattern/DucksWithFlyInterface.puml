@@ -1,0 +1,25 @@
+@startuml Ducks With Fly Interface
+
+interface Flyable{
+    Fly()
+}
+
+abstract class Duck{
+    +Swin()
+    +Quack()
+    {abstract} +Display()
+}
+
+class MallarDuck extends Duck implements Flyable {
+    +Display()
+}
+
+class RedHeadDuck extends Duck implements Flyable{
+    +Display()
+}
+
+class RubberDuck extends Duck{
+    +Quack()
+    +Display()
+}
+@enduml

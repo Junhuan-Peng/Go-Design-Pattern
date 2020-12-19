@@ -1,0 +1,39 @@
+@startuml Duck With Fly Strategy
+
+interface FlyBehavior{
+    Fly()
+}
+
+abstract class Duck{
+    -FlyBehavior doFly
+    +Swin()
+    +Quack()
+    +Fly()
+    +setFlyBehavior(Flyable)
+    {abstract} +Display()
+}
+
+Duck::doFly -l-> FlyBehavior
+
+
+class MallarDuck extends Duck {
+    +Display()
+}
+
+class RedHeadDuck extends Duck {
+    +Display()
+}
+
+class RubberDuck extends Duck {
+    +Quack()
+    +Display()
+}
+
+class NoFly implements FlyBehavior{
+    +Fly()
+}
+class FlyWithWings implements FlyBehavior{
+    +Fly()
+}
+
+@enduml
