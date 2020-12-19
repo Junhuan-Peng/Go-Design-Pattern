@@ -16,6 +16,7 @@
 ## 模拟鸭子应用（DuckSimulation）
 ### 初始项目
 我们来实现一个鸭子模拟的应用，鸭子会游泳、会呱呱叫。依据面向对象的设计方法，我们暂时设计出了下面的产品。
+
 ![初始类图](../../out/uml/behavioral/strategy_pattern/duckInit/Initial%20Duck%20Class%20Diagram.png)
 <details>
 <pre>
@@ -39,7 +40,8 @@ class RedHeadDuck extends Duck{
 
 ### 新的需求——让鸭子飞起来
 现在我们需要给鸭子们添加新的功能，让鸭子飞起来！
-最简单的方法便是给父类`Duck`添加`Fly`方法
+最简单的方法便是给父类`Duck`添加`Fly`方法。
+
 ![带Fly的Duck](../../out/uml/behavioral/strategy_pattern/duckWithFlyFunction/Duck%20Class%20With%20Fly.png)
 <details>
 <pre>
@@ -64,6 +66,7 @@ class RedHeadDuck extends Duck{
 
 ### 我们遇到了新的问题——一只会飞的橡皮鸭
 我们又遇到了问题——当我们增加了一只橡皮鸭（RubberDuck）的时候，它飞了起来！我们可不能让橡皮鸭飞起来。
+
 ![会飞的橡皮鸭](../../out/uml/behavioral/strategy_pattern/RubberDuckCanFly/Rubber%20Duck%20Can%20Fly.png)
 <details>
 <pre>
@@ -97,6 +100,7 @@ aRubberDuck.Fly() // it works!
 ```
 #### 解决方案一
 利用**继承**的特性，我们尝试让橡皮鸭重写（`override`）`Duck`的`Fly`方法，来让它老老实实呆在地上。
+
 ![不会飞的橡皮鸭](../../out/uml/behavioral/strategy_pattern/RubberDuckCannotFly/Rubber%20Duck%20Cannot%20Fly.png)
 <details>
 <pre>
@@ -131,7 +135,9 @@ class RubberDuck extends Duck{
 #### 解决方案二
 
 利用**接口**，让需要飞的鸭子们各自实现自己的飞行姿势！
+
 ![实现了飞行接口的鸭子们](../../out/uml/behavioral/strategy_pattern/DucksWithFlyInterface/Ducks%20With%20Fly%20Interface.png)
+
 <details>
 <pre>
 @startuml Ducks With Fly Interface
@@ -166,6 +172,7 @@ Oh! 我们避免了重写大量`Fly`方法——现在只需要大量的`实现`
 
 ### 给我们的小鸭子装上飞行插件
 两种解决方案都不太完美。我的意思是，既然有很多类不需要`Fly`，同时，剩下的类里面，有的需要同样形式的`Fly`，有的又需要不同形式的`Fly`，那我们何不把`Fly`抽象出来呢？不是让它作为一个低级的方法，而是把它变成一个emmm**插件**？这样我就可以方便**定制**类的行为了！不是吗？
+
 ![鸭子的策略模式](../../out/uml/behavioral/strategy_pattern/DucksWithFlyStrategy/Duck%20With%20Fly%20Strategy.png)
 <details>
 <pre>
