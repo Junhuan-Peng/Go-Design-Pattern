@@ -1,5 +1,5 @@
 # Go-Design-Pattern
-Design Pattern Implementation with 
+Design Pattern Implementation with Go
 
 Go实现设计模式
 
@@ -13,8 +13,8 @@ Go实现设计模式
 * 代理模式
 * 桥接模式
 * 装饰器模式
-* 适配器模式
-* 门面模式
+* [适配器模式](/structural/adaptor_pattern/README.md)
+* 门面模式/外观模式
 * 组合模式
 * 享元模式
 

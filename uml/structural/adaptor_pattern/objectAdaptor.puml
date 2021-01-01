@@ -1,0 +1,17 @@
+@startuml Object Adaptor
+class Client{
+
+}
+interface Target{
+    requests()
+}
+class Adaptee{
+    specficRequest()
+}
+class Adapter implements Target {
+    Adaptee adaptee
+    requests()
+}
+Client -r-> Target
+Adapter::adaptee -r-> Adaptee
+@enduml

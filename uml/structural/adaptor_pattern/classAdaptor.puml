@@ -1,0 +1,15 @@
+@startuml Class Adaptor
+class Client{
+
+}
+class Target{
+    requests()
+}
+class Adaptee{
+    specficRequest()
+}
+class Adapter extends Adaptee,Target {
+    requests()
+}
+Client -r-> Target
+@enduml

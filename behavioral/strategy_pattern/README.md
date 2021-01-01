@@ -243,7 +243,7 @@ func (duck *Duck) Fly() {
 func (duck *Duck) SetFlyBehavior(flyBehavior FlyBehavior) {
 	duck.doFly = flyBehavior
 }
-``` 
+```
 
 ```go 
 aMallarDuck := ducksim.MallarDuck{}
