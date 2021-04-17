@@ -1,0 +1,59 @@
+@startuml
+class Screen{
+    up()
+    down()
+}
+
+class Projector{
+    DvdPlayer dvdPlayer
+    on()
+    off()
+    tvMode()
+    wideScreenMode()
+}
+
+class DvdPlayer{
+    Amplifier amplifier
+    on()
+    off()
+    eject()
+    pause()
+    play()
+    setSurroundAudio()
+    setTwoChannelAudio()
+    stop()
+}
+
+class PopcornPopper{
+    on()
+    off()
+    pop()
+}
+
+class CDPlayer{
+    Amplifier amplifier
+    on()
+    off()
+    eject()
+    pause()
+    play()
+    stop()
+}
+
+class Amplifier{
+    DvdPlayer dvdPlayer
+    CDPlayer cdPlayer
+    on()
+    off()
+    setCD()
+    setSurroundSound()
+    setVolume()
+    setStereoSound()
+}
+
+Projector -up-> DvdPlayer
+Amplifier -right-> DvdPlayer
+DvdPlayer -left-> Amplifier
+Amplifier -left-> CDPlayer
+CDPlayer -right-> Amplifier
+@enduml

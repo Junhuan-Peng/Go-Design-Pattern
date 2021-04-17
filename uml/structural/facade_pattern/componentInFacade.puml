@@ -1,0 +1,77 @@
+
+@startuml
+class HomeTheaterFacade{
+    waitchMovie()
+    endMovie()
+    listenToCd()
+    endCd()
+}
+
+
+class Projector{
+    DvdPlayer dvdPlayer
+    on()
+    off()
+    tvMode()
+    wideScreenMode()
+}
+
+class DvdPlayer{
+    Amplifier amplifier
+    on()
+    off()
+    eject()
+    pause()
+    play()
+    setSurroundAudio()
+    setTwoChannelAudio()
+    stop()
+}
+
+class PopcornPopper{
+    on()
+    off()
+    pop()
+}
+
+class CDPlayer{
+    Amplifier amplifier
+    on()
+    off()
+    eject()
+    pause()
+    play()
+    stop()
+}
+
+class Amplifier{
+    DvdPlayer dvdPlayer
+    CDPlayer cdPlayer
+    on()
+    off()
+    setCD()
+    setSurroundSound()
+    setVolume()
+    setStereoSound()
+}
+
+class Screen{
+    up()
+    down()
+}
+
+
+Projector -up-> DvdPlayer
+Amplifier -right-> DvdPlayer
+DvdPlayer -left-> Amplifier
+Amplifier -left-> CDPlayer
+CDPlayer -right-> Amplifier
+
+HomeTheaterFacade -down-> Amplifier
+HomeTheaterFacade -down-> CDPlayer
+HomeTheaterFacade -down-> DvdPlayer
+HomeTheaterFacade -down-> PopcornPopper
+HomeTheaterFacade -down-> Projector
+HomeTheaterFacade -down-> Screen
+
+@enduml
