@@ -1,6 +1,8 @@
 package main
 
-import "go_design_pattern/behavioral/strategy_pattern/ducksim"
+import (
+	"go_design_pattern/behavioral/strategy_pattern/ducksim"
+)
 
 func main() {
 	aMallarDuck := ducksim.MallarDuck{}
